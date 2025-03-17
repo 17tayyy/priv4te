@@ -1,4 +1,4 @@
-# 🛡️ Educational Ransomware Simulation
+# 🛡️ Priv4te Ransomware
 
 **⚠️ Disclaimer: This project is for educational and research purposes only. Do not use it for illegal activities. The author is not responsible for any misuse of this code.**
 
