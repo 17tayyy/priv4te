@@ -44,7 +44,7 @@ pip install -r requirements.txt
 ### 5️⃣ **Generate test files** (for encryption testing)
 Run the following **PowerShell script** to create dummy files in common user directories:
 ```powershell
-powershell -ExecutionPolicy Bypass -File setup_test_env.ps1
+powershell -ExecutionPolicy Bypass -File setup-for-testing.ps1
 ```
 This will generate **test files** in:
 - Desktop
