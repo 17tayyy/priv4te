@@ -4,6 +4,8 @@
 
 ![image](https://github.com/user-attachments/assets/84033b10-c7de-4e92-93f0-813db0a5505a)
 
+![image](https://github.com/user-attachments/assets/6b505368-1a38-4a5f-8222-ba6a0f0c5cb4)
+
 ## 📌 About
 This repository contains a **ransomware simulation script** designed for **educational purposes**. The objective is to demonstrate how ransomware works and how security professionals can analyze and mitigate such threats.
 
