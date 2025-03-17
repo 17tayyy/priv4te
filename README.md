@@ -33,6 +33,7 @@ This repository contains a **ransomware simulation script** designed for **educa
 
 ## ✅ TODO
 
+  -  Decryptor 😂😂
   -  AES-256 instead of Fernet.
   -  Antivirus evasion.
   -  Database priority (.sql, .mdb, .db).
