@@ -2,6 +2,8 @@
 
 **⚠️ Disclaimer: This project is for educational and research purposes only. Do not use it for illegal activities. The author is not responsible for any misuse of this code.**
 
+![image](https://github.com/user-attachments/assets/84033b10-c7de-4e92-93f0-813db0a5505a)
+
 ## 📌 About
 This repository contains a **ransomware simulation script** designed for **educational purposes**. The objective is to demonstrate how ransomware works and how security professionals can analyze and mitigate such threats.
 
