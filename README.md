@@ -2,6 +2,8 @@
 
 **⚠️ Disclaimer: This project is for educational and research purposes only. Do not use it for illegal activities. The author is not responsible for any misuse of this code.**
 
+![Banner](https://github.com/user-attachments/assets/84033b10-c7de-4e92-93f0-813db0a5505a)
+
 ![image](https://github.com/user-attachments/assets/84033b10-c7de-4e92-93f0-813db0a5505a)
 
 ![image](https://github.com/user-attachments/assets/6b505368-1a38-4a5f-8222-ba6a0f0c5cb4)
