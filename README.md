@@ -18,28 +18,52 @@ This repository contains a **ransomware simulation script** designed for **educa
 ## 🛠️ Usage
 **Do not run this script on a system with real data.** If used in a controlled environment (like a virtual machine), proceed with caution.
 
-1. Clone the repository:
+### 1️⃣ **Setup a Virtual Environment**
+For security reasons, it is recommended to test this script in an **isolated virtual machine**.
+- Use **VirtualBox**, **VMware**, or **Hyper-V**.
+- Create **snapshots** before running the script to restore the system easily.
+- Use **Windows Sandbox** for a quick testing environment.
 
-  ```sh
-  git clone https://github.com/17tayyy/priv4te
-  cd priv4te
-  ```
+### 2️⃣ **Disable Antivirus & Windows Defender (for testing purposes)**
+Some security software may block execution:
+```powershell
+Set-MpPreference -DisableRealtimeMonitoring $true
+```
 
-2. Install dependencies:
-  ```sh
-  pip install -r requirements.txt
-  ```
+### 3️⃣ **Clone the repository**
+```sh
+git clone https://github.com/17tayyy/priv4te
+cd priv4te
+```
 
-3. Run the script:
-  ```sh
-  python priv4te.py
-  ```
+### 4️⃣ **Install dependencies**
+```sh
+pip install -r requirements.txt
+```
+
+### 5️⃣ **Generate test files** (for encryption testing)
+Run the following **PowerShell script** to create dummy files in common user directories:
+```powershell
+powershell -ExecutionPolicy Bypass -File setup_test_env.ps1
+```
+This will generate **test files** in:
+- Desktop
+- Documents
+- Downloads
+- Pictures
+- External Drives
+
+### 6️⃣ **Run the script**
+#### Encrypt files:
+```sh
+python3 priv4te.py"
+```
 
 ## ✅ TODO
 
-  -  Decryptor 😂😂
-  -  AES-256 instead of Fernet.
-  -  Antivirus evasion.
-  -  Database priority (.sql, .mdb, .db).
-  -  Data exfiltration
-  -  Self-propagation on local networks (infecting other PCs).
+- Implement a **Decryptor**
+- Replace **Fernet** with **AES-256** for stronger encryption
+- Improve **Antivirus evasion techniques**
+- Target **databases** (`.sql`, `.mdb`, `.db`) as a priority
+- Implement **Data exfiltration** techniques
+- Self-propagation in **local networks**
