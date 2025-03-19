@@ -61,8 +61,8 @@ python3 priv4te.py"
 
 ## ✅ TODO
 
-- Implement a **Decryptor** 😂😂
 - Implement multiple OS support
+- Block some user actions
 - Replace **Fernet** with **AES-256** for stronger encryption
 - Improve **Antivirus evasion techniques**
 - Target **databases** (`.sql`, `.mdb`, `.db`) as a priority

